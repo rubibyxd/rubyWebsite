@@ -1,32 +1,64 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <h2 class="my-name">Ruby Hsieh</h2>
+      <div class="navbar-list">
+      <router-link to="/">HOME</router-link>
+      <router-link to="/portfolio">PORTFOLIO</router-link>
+      <router-link to="/blog">BLOG</router-link>
+      <router-link to="/resume">RESUME</router-link>
+      <router-link to="/contact">CONTACT</router-link>
+      </div>
     </div>
     <router-view/>
   </div>
 </template>
 
 <style lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://allfont.net/allfont.css?fonts=agency-fb');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  font-family: 'Noto Sans TC', sans-serif;
+  padding: 70px 0;
 }
 
 #nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+  width: 100%;
+  height: 70px;
+  padding: 0 60px;
+  background-color: #3B2C2A;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  margin-top: -70px;
+  z-index: 99;
+  .my-name{
+    font-size: 32px;
+    font-family: 'Agency FB', arial;
+    color: #FFFFFF;
+  }
+  .navbar-list{
+    // width: 35%;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 100px;
+    a {
+      display: inline-block;
+      width: 100px;
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+      font-size: 16px;
+      font-weight: normal;
+      color: #FFFFFF;
+      text-decoration: none;
+      &.router-link-exact-active {
+        color: #02FFE6;
+      }
     }
   }
+
 }
 </style>
