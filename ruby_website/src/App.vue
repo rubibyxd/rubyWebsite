@@ -5,7 +5,7 @@
       <div class="navbar-list">
       <router-link to="/">HOME</router-link>
       <router-link to="/portfolio">PORTFOLIO</router-link>
-      <router-link to="/blog">BLOG</router-link>
+      <!-- <router-link to="/blog">BLOG</router-link> -->
       <router-link to="/resume">RESUME</router-link>
       <router-link to="/contact">CONTACT</router-link>
       </div>
@@ -42,7 +42,6 @@
     color: #F4F8FC;
   }
   .navbar-list{
-    // width: 35%;
     display: flex;
     justify-content: space-between;
     margin-right: 100px;
