@@ -1,144 +1,226 @@
 <template>
   <div class="home-portfolio">
-      <div class="title">
-        <h3 class="topic-cn">我的作品</h3>
-        <h4 class="topic-en">MY WORK</h4>
+    <div class="work-container">
+      <div class="tags">
+        <div v-for="(item,index) in tagsStatus" :key="index"
+            :class="{'tag--active':tagsStatus[index].isActive,
+            'tag1':index === 0,'tag2':index === 1,'tag3':index === 2}"
+            @click.stop="setActiveTag(index)"></div>
       </div>
-      <div class="work-container">
-        <div class="work-card left-card">
-          <div class="work-info">
-            <h4>■ 射擊小遊戲</h4>
-            <p>主要使用技術:</p>
-            <p>HTML、CSS、JavaScript、jQuery</p>
-            <div class="enter-btn">點此進入遊戲DEMO</div>
+      <template v-for="(item,index) in tagsStatus">
+        <div class="main-card" v-if="tagsStatus[index].isActive === true" :key="index">
+          <div class="work-intro">
+            <div class="intro-block">
+              <div class="work-title">{{ tagsStatus[index].title }}</div>
+              <div class="work-text-intro">{{ tagsStatus[index].text }}</div>
+              <div class="continue-btn">
+                <router-link to="/portfolio">
+                  <span>觀看更多</span>
+                  <span class="continue-btn-icon"><font-awesome-icon icon="chevron-right" /></span>
+                </router-link>
+              </div>
+            </div>
           </div>
-          <div class="work-pic"></div>
-        </div>
-        <div class="work-card right-card">
-          <div class="work-pic"></div>
-          <div class="work-info">
-            <h4>■ 射擊小遊戲</h4>
-            <p>主要使用技術:</p>
-            <p>HTML、CSS、JavaScript、jQuery</p>
-            <div class="enter-btn">點此進入遊戲DEMO</div>
-          </div>   
-        </div>
-        <div class="work-card left-card">
-          <div class="work-info">
-            <h4>■ 射擊小遊戲</h4>
-            <p>主要使用技術:</p>
-            <p>HTML、CSS、JavaScript、jQuery</p>
-            <div class="enter-btn">點此進入遊戲DEMO</div>
+          <div class="work-pic" v-if="tagsStatus[index].isActive === true">
+            <img :src="tagsStatus[index].imgUrl" alt="work-pic">
           </div>
-          <div class="work-pic"></div>
+        </div>
+      </template>
+      <div class="carousel-handler">
+        <div v-for="(item,index) in tagsStatus" :key="index">
+          <div class="tap-block" 
+              :class="{'block--active':tagsStatus[index].isActive}"
+              @click.stop="setActiveTag(index)"></div>
         </div>
       </div>
-      <div class="guide-text">
-        <router-link to="/portfolio">更多作品集 →</router-link>
-      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'HomePortfolio',
-  props: {
-    msg: String
-  }
+  data() {
+    return {
+      tagsStatus:[
+        {
+          name:'tag1',
+          isActive:true,
+          imgUrl:'/images/JQHW.png',
+          title:'◆ 射擊小遊戲1',
+          text:'希望大家能從這段話中有所收穫。作品的存在，令我無法停止對他的思考。作品必定會成為未來世界的新標準。李白講過一句值得人反覆尋思的話，黃河走東溟，白日落西海，逝川與流光，飄忽不相待。'
+        },
+        {
+          name:'tag2',
+          isActive:false,
+          imgUrl:'/images/podcast.png',
+          title:'◆ 射擊小遊戲2',
+          text:'希望大家能從這段話中有所收穫。作品的存在，令我無法停止對他的思考。作品必定會成為未來世界的新標準。李白講過一句值得人反覆尋思的話，黃河走東溟，白日落西海，逝川與流光，飄忽不相待。'
+        },
+        {
+          name:'tag3',
+          isActive:false,
+          imgUrl:'/images/BSHW.png',
+          title:'◆ 射擊小遊戲3',
+          text:'希望大家能從這段話中有所收穫。作品的存在，令我無法停止對他的思考。作品必定會成為未來世界的新標準。李白講過一句值得人反覆尋思的話，黃河走東溟，白日落西海，逝川與流光，飄忽不相待。'
+        }
+      ],
+    }
+  },
+  methods: {
+    setActiveTag(elIndex){
+      // this.tagsStatus[elIndex].isActive = !this.tagsStatus[elIndex].isActive
+      // this.tagsStatus = this.tagsStatus.map(item => {
+      //     item.isActive = false
+      //   return item
+      // })
+      // this.tagsStatus[elIndex].isActive = true
+
+      this.tagsStatus = this.tagsStatus.map((item,index) => {
+        // if (index !== elIndex)
+        //   item.isActive = false
+        // else
+        //   item.isActive = true
+        item.isActive = false
+        if (index === elIndex) 
+          item.isActive = true
+        return item
+      })
+      // for(let i = 0; i < this.tagsStatus.length; i++){
+      //   if(this.tagsStatus[i] !== this.tagsStatus[el]){
+      //     this.tagsStatus[i].isActive = false
+      //   }
+      // }
+    },
+  },
 }
 </script>
 
 <style scoped lang="scss">
   .home-portfolio{
-    padding: 60px 0;
-    background-color: #F1ECEC;
-    .title{
-      text-align: center;
-      margin-bottom: 60px;
-      color: #3B2C2A;
-      .topic-cn{
-        font-size: 36px;
-        font-weight: bold;
-      }
-      .topic-en{
-        font-size: 24px;
-        font-family: 'roboto';
-      }
-    }
+    margin-top: 30px;
+    margin-bottom: 100px;
     .work-container{
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      .work-card{
-        width: 75%;
-        margin-bottom: 120px;
-        padding: 60px;
+      width: 920px;
+      height: 575px;
+      margin: 0 auto;
+      .tags{
         display: flex;
+        align-items: flex-end;
+        padding-left: 15px;
+        .tag1,.tag2,.tag3{
+          width: 67px;
+          height: 30px;
+          box-shadow: 3px 0 3px #0405078e;
+        }
+        .tag1{
+          background-color: #927842;
+          z-index: 10;
+        }
+        .tag2{
+          background-color: #5887B9;
+          z-index: 9;
+        }
+        .tag3{
+          background-color: #A75154;
+          z-index: 8;
+        }
+        .tag--active{
+          height: 60px;
+          z-index: 30;
+        }
+      }
+      .main-card{
+        height: 448px;
+        background-color: #F4F8FC;
+        border: 2px solid #222730;
+        box-shadow: 7px 7px 0 #484E58;
+        display: flex;
+        padding: 12px;
+        align-items: center;
         justify-content: space-between;
-      }
-      .left-card{
-        background: linear-gradient(-45deg,#9E8989 50%, #3B2C2A 50%);
-        padding-left: 140px; 
-      }
-      .right-card{
-        background: linear-gradient(-45deg,#3B2C2A  50%, #9E8989 50%);
-        padding-right: 140px;
-        align-self: flex-end;
-      }
-      .work-pic{
-        width: 338px;
-        height: 190px;
-        background-color: #faf;
-        border-radius: 5px;
-        margin: 0 40px;
-      }
-      .work-info{
-        width: 250px;
-        color: #F1ECEC;
-        font-size: 16px;
-        padding: 0 60px;
-        h4{
-          font-size: 24px;
-          margin-bottom: 15px;
+        .work-intro{
+          width: 50%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          .intro-block{
+            width: calc(100% - 13px);
+            height: calc(100% - 6px);
+            border: 3px solid #484E58;
+            color:#222730;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .work-title{
+              font-size: 32px;
+              font-weight: bold;
+              padding: 40px 40px 30px;
+            }
+            .work-text-intro{
+              padding: 0 40px 30px;
+              color: #484E58;
+              font-size: 16px;
+              line-height: 32px;
+            }
+            .continue-btn{
+              width: 120px;
+              padding: 5px;
+              font-size: 20px;
+              font-weight: bold;
+              align-self: flex-end;
+              margin-right: 40px;
+              margin-bottom: 40px;
+              text-align: right;
+              border-bottom: 5px solid transparent;
+              a{
+                text-decoration: none;
+                color: #222730;
+              }
+              .continue-btn-icon{
+                display: inline-block;
+                text-align: center;
+                width: 26px;
+                height: 26px;
+                font-size: 18px;
+                color: #222730;
+                margin-left: 10px;
+                border-radius: 50%;
+              }
+              &:hover{
+                border-bottom: 5px solid #10F6A1;
+              }
+            }
+          }
         }
-        .enter-btn{
-          font-size: 18px;
-          font-weight: bold;
-          text-align: center;
-          color:  #3b2c2acd;
-          background-color: #fefefe;
-          border-radius: 30px;
-          border: 1px solid transparent;
-          outline: none;
-          padding: 10px 20px;
-          margin-top: 30px;
-          cursor: pointer;
-          transition: 0.2s;
-          &:hover{
-            color:  #3B2C2A;
-            border: 1px solid #231c1c;
-            box-shadow: 5px 5px 3px #231c1c;
-            transform: scale(1.06);
+        .work-pic{
+          width: 50%;
+          height: 100%;
+          img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
         }
       }
-    }
-    }
-    .guide-text{
-      margin-right: 10%;
-      text-align: right;
-      a{
-        text-decoration: none;
-        font-size: 18px;
-        font-weight: bold;
-        color: #fefefe;
-        background-color: #3B2C2A;
-        border-radius: 30px;
-        padding: 10px 40px;
-        &:hover{
-          background-color: #624a46;
+      .carousel-handler{
+        width: 100%;
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .tap-block{
+          width: 82px;
+          height: 15px;
+          border: 1px solid #939599;
+          margin: 0 15px;
+          background-color: rgba(255, 255, 255, 0.25);
         }
-      }
+        .block--active{
+          background-color: #10F6A1;
+        }
+      } 
+      
     }
   }
   // @media (max-width: 950px) {

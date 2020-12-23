@@ -1,14 +1,20 @@
 <template>
   <div class="home" @mousewheel="scrollTest()">
+    <div class="deco-circle"></div>
     <SimpleIntro />
+    <div class="work-title">
+      <h3 class="topic-cn">我的作品</h3>
+      <h4 class="topic-en">MY WORK</h4>
+    </div>
     <HomePortfolio />
     <div class="footer">
-      <h3>想了解更多？ 你可以 ... ...</h3>
+      <h3>想了解更多？</h3>
+      <h4>WANNA KNOW MORE ?</h4>
       <div class="guide-btn">
-        <router-link to="/resume">點這邊  看我的簡歷</router-link>
+        <router-link to="/resume">簡歷  Resume</router-link>
       </div>
       <div class="guide-btn">
-        點這邊 複製我的 E-mail
+        信箱 E-mail
       </div>
     </div>
   </div>
@@ -33,11 +39,38 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+  .deco-circle{
+    width: 1230px;
+    height: 1230px;
+    border-radius: 100%;
+    background-color: #484E58;
+    position: absolute;
+    top: -55%;
+    left: -20%;
+    z-index: 0;
+  }
+  .work-title{
+    padding: 60px 0;
+    margin-top: 150px;
+    text-align: center;
+    margin-bottom: 60px;
+    color: #F4F8FC;
+    .topic-cn{
+      font-size: 36px;
+      font-weight: bold;
+    }
+    .topic-en{
+      font-size: 24px;
+      font-family: 'roboto';
+    }
+  }
   .footer{
     height: 474px;
-    background-image: url('/images/work-731198_1920.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/coding_pic.jpg');
+    // background-image: url('/images/coding_pic.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    // opacity: 0.9;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -45,8 +78,12 @@ export default {
     h3{
       font-size: 36px;
       color: #fefefe;
-      text-shadow: 0 2px 5px #292828;
-      margin-bottom: 50px;
+      text-shadow: 0 2px 5px #222730;
+    }
+    h4{
+      font-size: 24px;
+      text-shadow: 0 2px 5px #222730;
+      margin-bottom: 40px;
     }
     .guide-btn{
       width: 30%;
@@ -54,8 +91,7 @@ export default {
       height: 36px;
       margin: 15px;
       padding: 10px;
-      background-color: #3B2C2A;
-      border-radius: 30px;
+      background-color: #927842;
       color: #fefefe;
       font-size: 18px;
       font-weight: bold;
@@ -67,7 +103,7 @@ export default {
         text-decoration: none;
       }
       &:hover{
-        background-color: #624a46;
+        background-color: #222730;
       }
     }
   }

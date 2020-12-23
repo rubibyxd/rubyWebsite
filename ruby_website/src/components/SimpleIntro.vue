@@ -1,6 +1,5 @@
 <template>
   <div class="simple-intro">
-    <img src="/images/nobg-red.png" alt="" class="nobg-img">
     <div class="card-container">
       <div class="my-pic"></div>
       <div class="my-discrption">
@@ -27,14 +26,12 @@
 <script>
 export default {
   name: 'SimpleIntro',
-  props: {
-    msg: String
-  }
 }
 </script>
 <style scoped lang="scss">
   .simple-intro{
-    margin-top: 50px;
+    margin-top: 160px;
+    margin-bottom: 55px;
     width: 100%;
     .card-container{
       position: relative;
@@ -54,49 +51,48 @@ export default {
       }
       .my-discrption{
         width: 65%;
-        padding: 0 30px;
+        padding: 0 40px;
         .career-title{
           font-size: 32px;
           font-family: 'Roboto', sans-serif;
-          color: #3B2C2A;
+          color: #F4F8FC;
         }
         .my-name{
           margin: 20px 0;
-          border-left: 10px solid #3B2C2A;
-          color: #3B2C2A;
+          border-bottom: 2px solid #F4F8FC;
+          padding-bottom: 5px;
+          color: #F4F8FC;
           display: flex;
           align-items: center;
           .cn-name{
             font-size: 24px;
-            font-weight: bold;
-            padding: 0 15px;
+            font-weight: normal;
+            padding-right: 20px;
           }
           .en-name{
-            font-size: 18px;
-            font-weight: bold;
+            font-size: 24px;
+            font-weight: normal;
             font-family: 'Roboto', sans-serif;
           }
         }
         .my-intro{
-          font-size: 18px;
+          font-size: 16px;
+          font-weight: lighter;
           line-height: 36px;
+          letter-spacing: 1px;
+          color: #F4F8FC;
         }
       }
     }
-    .nobg-img{
-      width: 20%;
-      min-width: 150px;
-      position: absolute;
-      right: 0;
-      top: 50%;
-      overflow: hidden;
-    }
     .scroll-hint{
+      width: 100%;
       font-size: 16px;
-      margin-top: 20px;
+      font-weight: bold;
+      margin-top: 55px;
       text-align: center;
-      padding: 30px;
-      color: #9E8989;
+      color: #10F6A1;
+      position: absolute;
+      z-index: 15;
     }
   }
 </style>

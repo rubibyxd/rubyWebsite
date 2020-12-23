@@ -22,13 +22,14 @@
 #app {
   font-family: 'Noto Sans TC', sans-serif;
   padding: 70px 0;
+  background-color: #222730;
 }
 
 #nav {
   width: 100%;
   height: 70px;
   padding: 0 60px;
-  background-color: #3B2C2A;
+  background-color:#2F394A;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -38,7 +39,7 @@
   .my-name{
     font-size: 32px;
     font-family: 'Agency FB', arial;
-    color: #FFFFFF;
+    color: #F4F8FC;
   }
   .navbar-list{
     // width: 35%;
@@ -55,7 +56,8 @@
       color: #FFFFFF;
       text-decoration: none;
       &.router-link-exact-active {
-        color: #02FFE6;
+        color: #d1a449;
+        text-shadow: 0px 0 1px #927842;
       }
     }
   }
