@@ -81,7 +81,6 @@ export default {
       .guide-btn{
         width: 30%;
         min-width: 260px;
-        height: 36px;
         margin: 15px;
         padding: 10px;
         background-color: #927842;

@@ -3,7 +3,7 @@
     <div class="card-container">
       <div class="my-pic"></div>
       <div class="my-discrption">
-        <h2 class="career-title">Front-End Engineer</h2>
+        <h2 class="career-title">Frontend Engineer</h2>
         <div class="my-name">
           <h3 class="cn-name">謝宛均</h3>
           <p class="en-name">Ruby Hsieh</p>

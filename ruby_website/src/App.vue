@@ -1,15 +1,17 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <h2 class="my-name">Ruby Hsieh</h2>
-      <div class="navbar-list">
-      <router-link to="/">HOME</router-link>
-      <router-link to="/portfolio">PORTFOLIO</router-link>
-      <!-- <router-link to="/blog">BLOG</router-link> -->
-      <router-link to="/resume">RESUME</router-link>
-      <router-link to="/contact">CONTACT</router-link>
-      </div>
-    </div>
+    <b-navbar toggleable="lg" type="dark" id="nav">
+      <b-navbar-brand class="my-name">Ruby Hsieh</b-navbar-brand>
+      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      <b-collapse id="nav-collapse" is-nav>
+        <b-navbar-nav class="navbar-list ml-auto">
+          <router-link to="/">HOME</router-link>
+          <router-link to="/portfolio">PORTFOLIO</router-link>
+          <router-link to="/resume">RESUME</router-link>
+          <router-link to="/contact">CONTACT</router-link>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
     <router-view/>
   </div>
 </template>
@@ -23,21 +25,25 @@
   font-family: 'Noto Sans TC', sans-serif;
   padding: 70px 0;
   background-color: #222730;
+  color: #F4F8FC;
 }
 
 #nav {
   width: 100%;
-  height: 70px;
+  min-height: 70px;
   padding: 0 60px;
   background-color:#2F394A;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   align-items: center;
   position: fixed;
   margin-top: -70px;
   z-index: 99;
+  user-select: none;
   .my-name{
     font-size: 32px;
+    font-weight: bold;
     font-family: 'Agency FB', arial;
     color: #F4F8FC;
   }
@@ -60,6 +66,22 @@
       }
     }
   }
-
+}
+@media(max-width:834px) {
+  #nav{
+    .my-name{
+      margin: 0 auto;
+    }
+    .navbar-list{
+      margin-right: 56px;
+      a{
+        width: 100%;
+        padding: 20px 0;
+        &:hover{
+        background-color: #222730;
+        }
+      }
+    }
+  }
 }
 </style>

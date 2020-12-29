@@ -94,12 +94,12 @@ export default {
         margin-bottom: 70px;
         color: #222730;
         position: relative;
-        transition: all 0.5s;
+        overflow: hidden;
+        cursor: pointer;
         &:hover{
-          cursor: pointer;
           .guide-label-btn{
-            display: block;
             bottom: 0;
+            opacity: 1;
           }
         }
         .guide-label-btn{
@@ -113,12 +113,13 @@ export default {
           position: absolute;
           bottom: -50px;
           left: 0;
-          display: none;
+          opacity: 0;
+          transition: all 0.3s;
         }
         .work-card{
           width: calc(100% - 6px);
           height: calc(100% - 6px);
-          border: 3px solid #222730;
+          border: 3px solid #927842;
           display: flex;
         }
         .work-discription{
@@ -126,7 +127,7 @@ export default {
           .work-title{
             font-size: 30px;
             font-weight: bold;
-            border-left: 70px solid #222730;
+            border-left: 70px solid #A75154;
             padding-left: 10px;
             margin-left: -15px;
             margin-top: 40px;
