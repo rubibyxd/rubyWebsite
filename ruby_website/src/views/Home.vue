@@ -34,14 +34,16 @@ export default {
 </script>
 <style lang="scss" scoped>
   .home{
+    overflow: hidden;
+    position: relative;
     .deco-circle{
       width: 1230px;
       height: 1230px;
       border-radius: 100%;
       background-color: #484E58;
       position: absolute;
-      top: -55%;
-      left: -20%;
+      top: -25%;
+      left: -40%;
       z-index: 0;
     }
     .work-title{
@@ -99,5 +101,33 @@ export default {
         }
       }
     } 
-  } 
+  }
+@media(max-width: 1024px){
+  .home{
+    .deco-circle{
+      width: 800px;
+      height: 800px;
+      top: -15%;
+      left: -40%;
+    }
+  }
+}
+@media(max-width: 600px){
+  .home{
+    .deco-circle{
+      left: -20%;
+    }
+    .work-title{
+      padding: 30px 0;
+      margin: 0;
+      margin-top: 130px;
+      .topic-cn{
+        font-size: 28px;
+      }
+      .topic-en{
+        font-size: 18px;
+      }
+    }
+  }
+}
 </style>

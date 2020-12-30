@@ -164,7 +164,6 @@ export default {
               line-height: 32px;
             }
             .continue-btn{
-              width: 120px;
               padding: 5px;
               font-size: 20px;
               font-weight: bold;
@@ -223,16 +222,93 @@ export default {
       
     }
   }
-  // @media (max-width: 950px) {
-  //   .home-portfolio{
-  //     .work-container{
-  //       .work-pic{
-  //         width: 40%;
-  //         height: 190px;
-  //         background-color: #3e1b73;
-  //         border-radius: 5px;
-  //       }
-  //     }  
-  //   }
-  // } 
+  @media(max-width:1024px){
+    .home-portfolio{
+      .work-container{
+        width: 80%;
+        .tags{
+          padding-left: 30px;
+        }
+        .main-card{
+          width: 95%;
+          height: 350px;
+          margin: 0 auto;
+          .work-intro{
+            .intro-block{
+              overflow: hidden;
+              .work-title{
+                font-size: 24px;
+                padding: 20px 20px 20px;
+              }
+              .work-text-intro{
+                padding: 0 20px;
+                font-size: 14px;
+                overflow: hidden;
+                display: -webkit-box;
+                display: -moz-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+              }
+              .continue-btn{
+                font-size: 16px;
+                margin-right: 20px;
+                margin-bottom: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media(max-width: 600px){
+    .home-portfolio{
+      .work-container{
+        .tags{
+          display: none;
+        }
+        .main-card{
+          width: 100%;
+          height: 500px;
+          margin: 0 auto;
+          flex-wrap: wrap;
+          flex-direction: column-reverse;
+          align-items: center;
+          .work-pic{
+            width: 100%;
+            height: 50%;
+            padding: 6px;
+          }
+          .work-intro{
+            width: 100%;
+            height: 50%;
+            align-items: center;
+            justify-content: center;
+            .intro-block{
+              overflow: hidden;
+              .work-title{
+                font-size: 18px;
+                padding: 15px;
+                text-align: center;
+              }
+              .work-text-intro{
+                padding: 0 15px;
+                font-size: 12px;
+                line-height: 24px;
+                overflow: hidden;
+                display: -webkit-box;
+                display: -moz-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+              }
+              .continue-btn{
+                font-size: 14px;
+                margin-right: 10px;
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 </style>

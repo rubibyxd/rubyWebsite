@@ -37,7 +37,7 @@ export default {
       position: relative;
       margin: 0 auto;
       width: 70%;
-      min-width: 697px;
+      // min-width: 697px;
       height: 100%;
       display: flex;
       .my-pic{
@@ -60,19 +60,22 @@ export default {
         .my-name{
           margin: 20px 0;
           border-bottom: 2px solid #F4F8FC;
-          padding-bottom: 5px;
           color: #F4F8FC;
           display: flex;
           align-items: center;
+          padding-bottom: 10px;
           .cn-name{
             font-size: 24px;
             font-weight: normal;
             padding-right: 20px;
+            margin: 0;
           }
           .en-name{
             font-size: 24px;
             font-weight: normal;
             font-family: 'Roboto', sans-serif;
+            padding: 0;
+            margin: 0;
           }
         }
         .my-intro{
@@ -95,4 +98,73 @@ export default {
       z-index: 15;
     }
   }
+@media(max-width:1024px){
+  .simple-intro{
+    margin-top: 100px;
+    .card-container{
+      width: 90%;
+      .my-pic{
+        height: 300px;
+      }
+      .my-discrption{
+        .career-title{
+          font-size: 24px;
+        }
+        .my-name{
+          .cn-name{
+            font-size: 18px;
+            font-weight: normal;
+            padding-right: 20px;
+            margin: 0;
+            margin-right: 10px;
+            padding: 0;
+          }
+          .en-name{
+            font-size: 18px;
+            font-weight: normal;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+          }
+        }
+        .my-intro{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+@media(max-width: 600px){
+  .simple-intro{
+    margin-top: 60px;
+    .card-container{
+      // flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      .my-pic{
+        width: 80%;
+        height: 300px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+      }
+      .my-discrption{
+        width: 100%;
+        .career-title{
+          font-size: 28px;
+          text-align: center;
+        }
+        .my-name{
+          justify-content: center;
+          border-bottom: 1px solid #F4F8FC;
+          .cn-name,.en-name{
+            font-size: 20px;
+          }
+        }
+        .my-intro{
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
 </style>

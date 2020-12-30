@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <b-navbar toggleable="lg" type="dark" id="nav">
-      <b-navbar-brand class="my-name">Ruby Hsieh</b-navbar-brand>
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      <b-navbar-brand class="my-name">Ruby Hsieh</b-navbar-brand>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="navbar-list ml-auto">
           <router-link to="/">HOME</router-link>
@@ -22,6 +22,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
 
 #app {
+  width: 100%;
   font-family: 'Noto Sans TC', sans-serif;
   padding: 70px 0;
   background-color: #222730;
@@ -69,11 +70,12 @@
 }
 @media(max-width:834px) {
   #nav{
+    padding: 0 20px;
     .my-name{
       margin: 0 auto;
     }
     .navbar-list{
-      margin-right: 56px;
+      margin: 0;
       a{
         width: 100%;
         padding: 20px 0;
