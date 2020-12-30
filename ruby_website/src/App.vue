@@ -68,7 +68,7 @@
     }
   }
 }
-@media(max-width:834px) {
+@media(max-width:1024px) {
   #nav{
     padding: 0 20px;
     .my-name{

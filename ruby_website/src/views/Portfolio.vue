@@ -117,8 +117,8 @@ export default {
           transition: all 0.3s;
         }
         .work-card{
-          width: calc(100% - 6px);
-          height: calc(100% - 6px);
+          width: 100%;
+          height: 100%;
           border: 3px solid #927842;
           display: flex;
         }
@@ -150,4 +150,96 @@ export default {
       }
     }
   }
+  @media(max-width:1024px){
+    .portfolio{
+      padding: 0 50px;
+      .portfolio-title{
+        .en-label{
+          width: 300px;
+        }
+        .label-border{
+          width: 100%;
+          border-bottom: 3px solid #927842;
+          margin-top: -20px;
+        }
+      }
+      .work-area{
+        .work-card-container{
+          width: 90%;
+          height: 330px;
+          }
+          .work-card{
+            .work-discription{
+              .work-title{
+                font-size: 24px;
+                border-left: 60px solid #A75154;
+              }
+              .work-text{
+                font-size: 16px;
+                padding: 0;
+                margin: 20px;
+                overflow: hidden;
+                display: -webkit-box;
+                display: -moz-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+              }
+            }
+          }
+        }
+      }
+    }
+  @media(max-width: 640px){
+    .portfolio{
+      padding: 0 30px;
+      .portfolio-title{
+        h2{
+          font-size: 30px;
+        }
+        .en-label{
+          font-size: 22px;
+          width: 150px;
+        }
+        .label-border{
+          width: 100%;
+          border-bottom: 3px solid #927842;
+          margin-top: -20px;
+        }
+      }
+      .work-area{
+        .work-card-container{
+          width: 90%;
+          height: 100%;
+          padding: 5px;
+          }
+          .work-card{
+            flex-wrap: wrap;
+            flex-direction: space-between;
+            align-items: center;
+            .work-discription{
+              width: 100%;
+              .work-title{
+                font-size: 22px;
+                margin-top: 10px;
+                border-left: 50px solid #A75154;
+              }
+              .work-text{
+                font-size: 12px;
+                line-height: 24px;
+                padding: 0;
+                margin: 15px;
+                overflow: hidden;
+                display: -webkit-box;
+                display: -moz-box;
+                -webkit-line-clamp: 4;
+                -webkit-box-orient: vertical;
+              }
+            }
+            .work-picture{
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
 </style>

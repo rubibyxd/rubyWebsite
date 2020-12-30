@@ -145,8 +145,8 @@ export default {
       box-shadow: 7px 7px 0 #484E58;
       margin: 0 auto;
       .name-card{
-        width: calc(100% - 6px);
-        height: calc(100% - 6px);
+        width: 100%;
+        height: 100%;
         border: 3px solid #222730;
         color: #222730;
         display: flex;
@@ -165,7 +165,6 @@ export default {
           margin-bottom: 30px;
           color: #FAFFF6;
           .my-name{
-            width: 30%;
             background-color: #222730;
             font-size: 28px;
             text-align: right;
@@ -200,7 +199,7 @@ export default {
             flex-wrap: wrap;
             justify-content: space-between;
             .school-info{
-              min-width: 340px;
+              // min-width: 340px;
               display: flex;
               margin: 30px 0;
               .school-logo{
@@ -296,6 +295,188 @@ export default {
             }
           }
         }     
+      }
+    }
+  }
+  @media(max-width:1024px){
+    .resume{
+      padding: 0 50px;
+      .resume-title{
+        .en-label{
+          width: 300px;
+        }
+      }
+      .name-card-area{
+        .name-card{
+          .main-content{
+            padding: 0 60px;
+          }
+          .name-label{
+            margin-left: -15px;
+            margin-top: 30px;
+            .my-name{
+              background-color: #222730;
+              font-size: 20px;
+              padding: 12px 30px 12px 80px;
+            }
+            .work-title{
+              font-size: 20px;
+            }
+          }
+          .tools-area{
+            .tools-topic{
+              font-size: 18px;
+            }
+          }
+          .page-topic{
+            font-size: 24px;
+          }
+          .autobiography-content{
+            padding: 0 60px;
+            .paragraph{
+              .title{
+                font-size: 18px;
+              }
+              .text{
+                font-size: 14px;
+              }
+            }
+          }     
+        }
+      }
+    }
+  }
+  @media(max-width: 640px){
+    .resume{
+      padding: 0 30px;
+      .resume-title{
+        h2{
+          font-size: 30px;
+        }
+        .en-label{
+          width: 200px;
+          font-size: 22px;
+        }
+      }
+      .name-card-area{
+        padding: 5px;
+        .name-card{
+          .main-content{
+            padding: 0 30px;
+          }
+          .name-label{
+            margin-top: 30px;
+            flex-direction: column;
+            margin-left: 0;
+            .my-name{
+              width: 90%;
+              font-size: 20px;
+              text-align: center;
+              padding: 12px;
+            }
+            .work-title{
+              font-size: 14px;
+            }
+          }
+          .tools-area{
+            margin-bottom: 20px;
+            font-size: 12px;
+            .tools-topic{
+              font-size: 14px;
+              font-weight: bold;
+              margin-bottom: 10px;
+            }
+          }
+          .education-area{
+            .edu-title{
+              font-size: 14px;
+              text-align: center;
+              margin: 0 -20px;
+              padding: 5px 0;
+              border-top: 2px solid #2F394A;
+              border-bottom: 2px solid #2F394A;
+            }
+            .info-card-container{
+              .school-info{
+                width: 100%;
+                margin: 20px 0;
+                .school-logo{
+                  img{
+                    width: 50px;
+                    height: 50px;
+                  }
+                }
+              }
+              .info-detail{
+                font-size: 12px;
+                .school-name{
+                  font-size: 14px;
+                }
+              }
+            } 
+          }
+          .work-experience{
+            .work-exp-title{
+              font-size: 14px;
+              text-align: center;
+              margin: 0 -20px;
+              padding: 5px 0;
+              border-top: 2px solid #2F394A;
+              border-bottom: 2px solid #2F394A;
+            }
+            .job-info-container{
+              font-size: 12px;
+              .company-logo{
+                margin-right: 15px;
+                img{
+                  width: 50px;
+                  height: 50px;
+                }
+              }
+              .company-name{
+                font-size: 14px;
+                font-weight: bold;
+              }
+              .job-title{
+                font-size: 12px;
+              }
+              .job-info{
+                p{
+                  margin: 0;
+                }
+              }
+            }
+          }
+          .page-btn{
+            width: 100%;
+            margin-right: -0;
+            margin-bottom: 40px;
+            margin-top: 0;
+            font-size: 18px;
+            padding: 10px;
+          }
+          .page-topic{
+            margin-top: 20px;
+            font-size: 20px;
+          }
+          .autobiography-content{
+            padding: 0 30px;
+            .paragraph{
+              margin-bottom: 40px;
+              .title{
+                font-size: 16px;
+                margin-bottom: 5px;
+                text-align: center;
+                border: 1px solid #222730;
+              }
+              .text{
+                font-size: 14px;
+                line-height: 28px;
+                white-space: pre-wrap;
+              }
+            }
+          }     
+        }
       }
     }
   }
