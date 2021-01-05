@@ -8,14 +8,17 @@
       <div class="label-border"></div>
     </div>
     <div class="work-area">
-      <div class="work-card-container" v-for="(item,index) in workCards" :key="index">
+      <div class="work-card-container"
+           @click.stop="hrefEvent(myData[index].pageUrl)" 
+           v-for="(item,index) in myData" 
+           :key="index">
         <div class="work-card">
           <div class="work-discription">
-            <div class="work-title">{{ workCards[index].name }}</div>
-            <div class="work-text">{{ workCards[index].text }}</div>
+            <div class="work-title">{{ myData[index].title }}</div>
+            <div class="work-text">{{ myData[index].text }}</div>
           </div>
           <div class="work-picture">
-            <img :src="workCards[index].imgUrl" alt="work-pic">
+            <img :src="myData[index].imgUrl" alt="work-pic">
           </div>
         </div>
         <div class="guide-label-btn">點擊查看DEMO</div>
@@ -28,30 +31,23 @@ export default {
   name:'Portfolio',
   data() {
     return {
-      workCards:[
-        {
-          name:'射擊小遊戲',
-          text:'維爾加曾講過，高貴的出身是一種湊巧的事情，並不是一種德行。白手起家才算是真本事。這不禁令我深思。別林斯基深信，一切真正的和偉大的東西，都是純樸而謙遜的。這段話雖短，卻足以改變人類的歷史。需要考慮周詳作品集的影響及因應對策。',
-          imgUrl:'/images/JQHW.png',
-        },
-        {
-          name:'射擊小遊戲-2',
-          text:'高爾基曾提出，人如果沒有良心，哪怕有天大的聰明也活不下去。這影響了我的價值觀。貝多芬曾經說過，卓越的人一大優點是：在不利與艱難的遭遇裡百折不饒。',
-          imgUrl:'/images/podcast.png',
-        },
-        {
-          name:'射擊小遊戲-3',
-          text:'莊周深信，天地與我並存，萬物與我為一。這段話非常有意思。這種事實對本人來說意義重大，相信對這個世界也是有一定意義的。世界上若沒有作品集，對於人類的改變可想而知。',
-          imgUrl:'/images/BSHW.png',
-        },
-      ]
+      myData:[]
     }
   },
-  methods: {
-    scrollEvent(){
-      console.log(window.scrollY)
-    }
+  created(){
+    this.axios
+      .get('/json/portfolio.json')
+      .then(response => (this.myData = response.data))
+      .catch(function (error) { 
+        console.log(error);
+      });
   },
+  watch:{
+    $route (to, from){
+      console.log(to)
+      console.log(from)
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -88,7 +84,7 @@ export default {
       align-items: center;
       .work-card-container{
         width: 910px;
-        height: 450px;
+        height: 350px;
         padding: 12px;
         background-color: #F4F8FC;
         margin-bottom: 70px;
@@ -121,6 +117,13 @@ export default {
           height: 100%;
           border: 3px solid #927842;
           display: flex;
+          
+          &:hover{
+            img{
+              width: 100%;
+              height: 87%;
+            }
+          }
         }
         .work-discription{
           width: 50%;
@@ -137,6 +140,7 @@ export default {
             font-size: 16px;
             line-height: 32px;
             color: #484E58;
+            white-space: pre-wrap;
           }
         }
         .work-picture{
@@ -145,6 +149,7 @@ export default {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: 0.5s ease-in-out;
           }
         }
       }

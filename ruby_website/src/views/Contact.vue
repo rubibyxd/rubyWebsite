@@ -10,11 +10,11 @@
     <div class="name-card-area">
       <div class="name-card">
         <div class="name-label">
-          <div class="my-name">{{ myInfo.name }}</div>
+          <div class="my-name">{{ myName }}</div>
         </div>
         <div class="my-info">
-          <p><font-awesome-icon class="card-icons" :icon="['far', 'envelope']" />{{ myInfo.mail }}</p>
-          <p><font-awesome-icon class="card-icons" :icon="['fab', 'github-square']" />{{ myInfo.gitHub }}</p>
+          <p @click.stop="doCopy()"><font-awesome-icon class="card-icons" :icon="['far', 'envelope']" />{{ isActive ? '複製成功' : myMail }}</p>
+          <p @click.stop="hrefEvent(gitHub)"><font-awesome-icon class="card-icons" :icon="['fab', 'github-square']" />{{ gitHub }}</p>
         </div>
       </div>
     </div>
@@ -25,13 +25,12 @@ export default {
   name:'Contact',
   data() {
     return {
-      myInfo:{
-        name:'謝宛均 Ruby Hsieh',
-        mail:'rubyh.workmail@gmail.com',
-        gitHub:'https://github.com/rubibyxd'
-      }
+      myName:'謝宛均 Ruby Hsieh',
+      myMail:'rubyh.workmail@gmail.com',
+      gitHub:'https://github.com/rubibyxd',
+      isActive:false,
     }
-  },
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -63,8 +62,7 @@ export default {
       }
     }
     .name-card-area{
-      width: 918px;
-      // height: 338px;
+      width: 70%;
       padding: 12px;
       border: 3px solid #222730;
       background-image: url('/images/nameCardBG.png');
@@ -73,11 +71,11 @@ export default {
       box-shadow: 7px 7px 0 #484E58;
       margin: 0 auto;
       .name-card{
-        width: calc(100% - 6px);
-        height: calc(100% - 6px);
+        width: 100%;
+        height: 100%;
         border: 3px solid #222730;
         .my-name{
-          width: 30%;
+          width: 50%;
           background-color: #222730;
           font-size: 28px;
           text-align: right;
@@ -106,4 +104,65 @@ export default {
       }
     }
   }
+@media(max-width:1024px){
+  .contact{
+    padding: 0 50px;
+    .contact-title{
+      .en-label{
+        width: 300px;
+      }
+    }
+    .name-card-area{      
+      .name-card{
+        .my-name{
+          font-size: 24px;
+          padding: 12px 30px 12px 70px;
+        }
+        .my-info{
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+@media(max-width: 640px){
+  .contact{
+    padding: 0 30px;
+    .contact-title{
+      h2{
+        font-size: 30px;
+      }
+      .en-label{
+        font-size: 22px;
+        width: 200px;
+      }
+    }
+    .name-card-area{
+      padding: 5px;      
+      .name-card{
+        padding: 20px;
+        .my-name{
+          width: 100%;
+          font-size: 20px;
+          padding: 12px;
+          text-align: center;
+          margin: 0;
+        }
+        .my-info{
+          width: 100%;
+          margin: 0;
+          font-size: 12px;
+          margin-top: 20px;
+          text-align: center;
+          p{
+            margin-bottom: 10px;
+          }
+          .card-icons{
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+}
 </style>

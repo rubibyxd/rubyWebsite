@@ -1,0 +1,20 @@
+[
+    {
+        "title":"Podcast收聽平台電商網站",
+        "text":"主要使用技術:\r\nReact、Node.js、HTML5、CSS/SCSS、JavaScript、Bootstrape、RESTful API、Git版本控制、MySQL",
+        "imgUrl":"/images/podcast.png",
+        "pageUrl":""
+    },
+    {
+        "title":"射擊小遊戲",
+        "text":"主要使用技術:\r\njQuery、HTML5、CSS、JavaScript",
+        "imgUrl":"/images/JQHW.png",
+        "pageUrl":"https://github.com/rubibyxd/myJQhomework-jet-game"
+    },
+    {
+        "title":"切版練習(暴雪官網)",
+        "text":"主要使用技術:\r\nHTML5、CSS、Bootstrape、JavaScript",
+        "imgUrl":"/images/BSHW.png",
+        "pageUrl":"https://github.com/rubibyxd/MyBootstrapeHW"
+    }
+]

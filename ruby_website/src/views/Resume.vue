@@ -85,7 +85,12 @@ export default {
   data() {
     return {
       page:0,
-      myData:null
+      myData: {
+        toolType: [],
+        eduInfo: [],
+        workInfo: [],
+        autobiography: []
+      }
     }
   },
   created(){
@@ -98,13 +103,15 @@ export default {
   },
   methods: {
     changePage(){
+      window.document.body.scrollTo = 0;
+      window.document.documentElement.scrollTop = 0;
       if(this.page === 0){
         this.page = 1
       }
       else{
         this.page = 0
       }
-    }
+    },
   },
 }
 </script>
@@ -269,6 +276,7 @@ export default {
           color: #FAFFF6;
           font-size: 24px;
           font-weight: bold;
+          cursor: pointer;
           span{
             margin-right: 20px;
           }
@@ -316,11 +324,11 @@ export default {
             margin-top: 30px;
             .my-name{
               background-color: #222730;
-              font-size: 20px;
+              font-size: 18px;
               padding: 12px 30px 12px 80px;
             }
             .work-title{
-              font-size: 20px;
+              font-size: 18px;
             }
           }
           .tools-area{

@@ -23,6 +23,7 @@
 
 #app {
   width: 100%;
+  min-height: 100%;
   font-family: 'Noto Sans TC', sans-serif;
   padding: 70px 0;
   background-color: #222730;

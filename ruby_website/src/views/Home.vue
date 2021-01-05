@@ -9,12 +9,14 @@
     <HomePortfolio />
     <div class="footer">
       <h3>想了解更多？</h3>
-      <h4>WANNA KNOW MORE ?</h4>
-      <div class="guide-btn">
-        <router-link to="/resume">簡歷  Resume</router-link>
-      </div>
-      <div class="guide-btn">
+      <h4>WANNA KNOW MORE ?</h4> 
+      <router-link to="/resume" class="guide-btn">簡歷  Resume</router-link>
+      <div class="guide-btn" @click.stop="doCopy()">
         信箱 E-mail
+        <div class="copy-msg" 
+            :class="{'copy-msg-active': isActive}">
+            複製成功
+        </div>
       </div>
     </div>
   </div>
@@ -29,6 +31,12 @@ export default {
   components: {
     SimpleIntro,
     HomePortfolio,
+  },
+  data() {
+    return {
+      myMail:'rubyh.workmail@gmail.com',
+      isActive:false,
+    }
   },
 }
 </script>
@@ -80,6 +88,10 @@ export default {
         text-shadow: 0 2px 5px #222730;
         margin-bottom: 40px;
       }
+      a{
+        color: #fefefe;
+        text-decoration: none;
+      }
       .guide-btn{
         width: 30%;
         min-width: 260px;
@@ -91,15 +103,30 @@ export default {
         font-weight: bold;
         text-align: center;
         line-height: 36px;
+        position: relative;
         cursor: pointer;
-        a{
-          color: #fefefe;
-          text-decoration: none;
-        }
         &:hover{
           background-color: #222730;
         }
       }
+    }
+    .copy-msg {
+      font-size: 12px;
+      color: white;
+      position: absolute;
+      width: 100px;
+      padding: 5px;
+      text-align: center;
+      top: 5px;
+      left: 40%;
+      z-index: 910;
+      background-color: rgba(0, 0, 0, 0.7);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .2s;
+    }
+    .copy-msg-active {
+        opacity: 1;
     } 
   }
 @media(max-width: 1024px){

@@ -1,32 +1,32 @@
 <template>
   <div class="home-portfolio">
     <div class="work-container">
-      <div class="tags">
+      <div v-if="tagsStatus.length > 1" class="tags">
         <div v-for="(item,index) in tagsStatus" :key="index"
             :class="{'tag--active':tagsStatus[index].isActive,
-            'tag1':index === 0,'tag2':index === 1,'tag3':index === 2}"
+            'tag-brown':index === 0,'tag-blue':index === 1,'tag-red':index === 2}"
             @click.stop="setActiveTag(index)"></div>
       </div>
       <template v-for="(item,index) in tagsStatus">
-        <div class="main-card" v-if="tagsStatus[index].isActive === true" :key="index">
+        <div v-if="tagsStatus[index].isActive === true" class="main-card" :key="index">
           <div class="work-intro">
             <div class="intro-block">
               <div class="work-title">{{ tagsStatus[index].title }}</div>
               <div class="work-text-intro">{{ tagsStatus[index].text }}</div>
               <div class="continue-btn">
                 <router-link to="/portfolio">
-                  <span>觀看更多</span>
+                  <span>看所有作品</span>
                   <span class="continue-btn-icon"><font-awesome-icon icon="chevron-right" /></span>
                 </router-link>
               </div>
             </div>
           </div>
-          <div class="work-pic" v-if="tagsStatus[index].isActive === true">
+          <div v-if="tagsStatus[index].isActive === true" class="work-pic">
             <img :src="tagsStatus[index].imgUrl" alt="work-pic">
           </div>
         </div>
       </template>
-      <div class="carousel-handler">
+      <div v-if="tagsStatus.length > 1" class="carousel-handler">
         <div v-for="(item,index) in tagsStatus" :key="index">
           <div class="tap-block" 
               :class="{'block--active':tagsStatus[index].isActive}"
@@ -40,57 +40,36 @@
 <script>
 export default {
   name: 'HomePortfolio',
+  created(){
+    this.axios
+      .get('/json/portfolio.json')
+      .then(response => (
+        // 把拿到的資料用map整理到this.tagStatus
+          this.tagsStatus = response.data.map((item,index) => {
+              item.isActive = false
+              if(index === 0)
+                item.isActive = true
+              return item
+            }).slice(0,3)
+        )
+      )
+      .catch(function (error) { 
+        console.log(error);
+      });
+  },
   data() {
     return {
-      tagsStatus:[
-        {
-          name:'tag1',
-          isActive:true,
-          imgUrl:'/images/JQHW.png',
-          title:'◆ 射擊小遊戲1',
-          text:'希望大家能從這段話中有所收穫。作品的存在，令我無法停止對他的思考。作品必定會成為未來世界的新標準。李白講過一句值得人反覆尋思的話，黃河走東溟，白日落西海，逝川與流光，飄忽不相待。'
-        },
-        {
-          name:'tag2',
-          isActive:false,
-          imgUrl:'/images/podcast.png',
-          title:'◆ 射擊小遊戲2',
-          text:'希望大家能從這段話中有所收穫。作品的存在，令我無法停止對他的思考。作品必定會成為未來世界的新標準。李白講過一句值得人反覆尋思的話，黃河走東溟，白日落西海，逝川與流光，飄忽不相待。'
-        },
-        {
-          name:'tag3',
-          isActive:false,
-          imgUrl:'/images/BSHW.png',
-          title:'◆ 射擊小遊戲3',
-          text:'希望大家能從這段話中有所收穫。作品的存在，令我無法停止對他的思考。作品必定會成為未來世界的新標準。李白講過一句值得人反覆尋思的話，黃河走東溟，白日落西海，逝川與流光，飄忽不相待。'
-        }
-      ],
+      tagsStatus: [],
     }
   },
   methods: {
     setActiveTag(elIndex){
-      // this.tagsStatus[elIndex].isActive = !this.tagsStatus[elIndex].isActive
-      // this.tagsStatus = this.tagsStatus.map(item => {
-      //     item.isActive = false
-      //   return item
-      // })
-      // this.tagsStatus[elIndex].isActive = true
-
       this.tagsStatus = this.tagsStatus.map((item,index) => {
-        // if (index !== elIndex)
-        //   item.isActive = false
-        // else
-        //   item.isActive = true
         item.isActive = false
         if (index === elIndex) 
           item.isActive = true
         return item
       })
-      // for(let i = 0; i < this.tagsStatus.length; i++){
-      //   if(this.tagsStatus[i] !== this.tagsStatus[el]){
-      //     this.tagsStatus[i].isActive = false
-      //   }
-      // }
     },
   },
 }
@@ -108,20 +87,21 @@ export default {
         display: flex;
         align-items: flex-end;
         padding-left: 15px;
-        .tag1,.tag2,.tag3{
+        .tag-brown,.tag-blue,.tag-red{
           width: 67px;
           height: 30px;
           box-shadow: 3px 0 3px #0405078e;
+          cursor: pointer;
         }
-        .tag1{
+        .tag-brown{
           background-color: #927842;
           z-index: 10;
         }
-        .tag2{
+        .tag-blue{
           background-color: #5887B9;
           z-index: 9;
         }
-        .tag3{
+        .tag-red{
           background-color: #A75154;
           z-index: 8;
         }
@@ -131,7 +111,7 @@ export default {
         }
       }
       .main-card{
-        height: 448px;
+        height: 400px;
         background-color: #F4F8FC;
         border: 2px solid #222730;
         box-shadow: 7px 7px 0 #484E58;
@@ -144,6 +124,7 @@ export default {
           height: 100%;
           display: flex;
           align-items: center;
+          white-space: pre-wrap;
           .intro-block{
             width: calc(100% - 13px);
             height: calc(100% - 6px);
@@ -153,11 +134,13 @@ export default {
             flex-direction: column;
             justify-content: space-between;
             .work-title{
-              font-size: 32px;
+              height: 35%;
+              font-size: 28px;
               font-weight: bold;
               padding: 40px 40px 30px;
             }
             .work-text-intro{
+              height: 40%;
               padding: 0 40px 30px;
               color: #484E58;
               font-size: 16px;
@@ -169,7 +152,7 @@ export default {
               font-weight: bold;
               align-self: flex-end;
               margin-right: 40px;
-              margin-bottom: 40px;
+              margin-bottom: 30px;
               text-align: right;
               border-bottom: 5px solid transparent;
               a{
@@ -208,6 +191,7 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
+        cursor: pointer;
         .tap-block{
           width: 82px;
           height: 15px;
