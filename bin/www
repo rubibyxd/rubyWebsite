@@ -3,14 +3,14 @@
 /**
  * Module dependencies.
  */
-
+var path = require('path');
 var app = require('../app');
 var debug = require('debug')('myapp:server');
 var fs = require('fs');
 var http = require('http');
 var https = require('https');
-var key = fs.readFileSync('~/../ssl/private.key');
-var cert = fs.readFileSync('~/../ssl/certificate.crt');
+var key = fs.readFileSync(path.join(__dirname + '/../ssl/private.key'));
+var cert = fs.readFileSync(path.join(__dirname + '/../ssl/certificate.crt'));
 var options = {
   key: key,
   cert: cert
