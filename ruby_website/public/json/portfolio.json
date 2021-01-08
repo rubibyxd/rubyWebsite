@@ -1,9 +1,15 @@
 [
     {
+        "title":"個人網站",
+        "text":"主要使用技術:\r\n Vue.js、HTML5、SCSS、Vue Bootstrape、JavaScript",
+        "imgUrl":"/images/vuework.png",
+        "pageUrl":"https://rubyh.tw"
+    },
+    {
         "title":"Podcast收聽平台電商網站",
         "text":"主要使用技術:\r\nReact、Node.js、HTML5、CSS/SCSS、JavaScript、Bootstrape、RESTful API、Git版本控制、MySQL",
         "imgUrl":"/images/podcast.png",
-        "pageUrl":""
+        "pageUrl":"https://github.com/kenjiinthehouse/soundarProj"
     },
     {
         "title":"射擊小遊戲",

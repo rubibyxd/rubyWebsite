@@ -115,10 +115,12 @@ export default {
     .name-card-area{      
       .name-card{
         .my-name{
-          font-size: 24px;
-          padding: 12px 30px 12px 70px;
+          font-size: 26px;
+          padding: 12px 12px 12px 32px;
+          width: 60%;
         }
         .my-info{
+          width: 70%;
           font-size: 20px;
         }
       }
@@ -140,10 +142,10 @@ export default {
     .name-card-area{
       padding: 5px;      
       .name-card{
-        padding: 20px;
+        padding: 10px;
         .my-name{
           width: 100%;
-          font-size: 20px;
+          font-size: 16px;
           padding: 12px;
           text-align: center;
           margin: 0;

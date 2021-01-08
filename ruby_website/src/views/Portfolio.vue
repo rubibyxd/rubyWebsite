@@ -83,8 +83,8 @@ export default {
       flex-direction: column;
       align-items: center;
       .work-card-container{
-        width: 910px;
-        height: 350px;
+        width: 80%;
+        height: 380px;
         padding: 12px;
         background-color: #F4F8FC;
         margin-bottom: 70px;
@@ -128,9 +128,9 @@ export default {
         .work-discription{
           width: 50%;
           .work-title{
-            font-size: 30px;
+            font-size: 24px;
             font-weight: bold;
-            border-left: 70px solid #A75154;
+            border-left: 40px solid #A75154;
             padding-left: 10px;
             margin-left: -15px;
             margin-top: 40px;
@@ -170,17 +170,18 @@ export default {
       }
       .work-area{
         .work-card-container{
-          width: 90%;
-          height: 330px;
+          width: 80%;
+          height: 280px;
           }
           .work-card{
             .work-discription{
               .work-title{
-                font-size: 24px;
-                border-left: 60px solid #A75154;
+                font-size: 18px;
+                border-left: 30px solid #A75154;
               }
               .work-text{
-                font-size: 16px;
+                font-size: 14px;
+                line-height: 28px;
                 padding: 0;
                 margin: 20px;
                 overflow: hidden;
@@ -224,9 +225,8 @@ export default {
             .work-discription{
               width: 100%;
               .work-title{
-                font-size: 22px;
+                font-size: 16px;
                 margin-top: 10px;
-                border-left: 50px solid #A75154;
               }
               .work-text{
                 font-size: 12px;
