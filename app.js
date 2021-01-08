@@ -10,7 +10,7 @@ var logger = require('morgan');
 var app = express();
 
 var website = path.join(__dirname, 'ruby_website/dist');
-
+var jetGame = path.join(__dirname, 'jetGame/');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -27,8 +27,12 @@ app.get('/', function(req, res) {
 });
 
 app.use('/',express.static(website));
-// app.use('/', indexRouter);
-// app.use('/users', usersRouter);
+
+// jetGame =======================
+app.get('/jetGame/', function(req, res) {
+  res.sendFile(path.join(jetGame, 'index.html')); 
+});
+app.use('/jetGame/',express.static(jetGame));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

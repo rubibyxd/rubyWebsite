@@ -43,8 +43,11 @@ Vue.mixin({
     hrefEvent(url){
       if(url === ""){
         return
-      }else{
+      }else if(url.slice(0,4) === "http"){
         window.open(url)
+      }
+      else{ 
+        window.open(location.origin + url)
       }
     }
   }
