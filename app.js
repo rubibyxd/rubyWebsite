@@ -21,18 +21,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 // app.use(express.static(path.join(__dirname, 'public')));
 
-
-app.get('/', function(req, res) {
-  res.sendFile(path.join(website, 'index.html'));
-});
+// jetGame =======================
+app.use('/jetGame/',express.static(jetGame));
 
 app.use('/',express.static(website));
+app.use('/*',express.static(website));
 
-// jetGame =======================
-app.get('/jetGame/', function(req, res) {
-  res.sendFile(path.join(jetGame, 'index.html')); 
-});
-app.use('/jetGame/',express.static(jetGame));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
