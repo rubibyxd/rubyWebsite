@@ -1,5 +1,11 @@
 [
     {
+        "title":"簡易Youtube播放器",
+        "text":"主要使用技術:\r\n Vue.js、HTML5、SCSS、JavaScript、Youtube Api串接、Git版本控制",
+        "imgUrl":"/images/simpleYT.png",
+        "pageUrl":"/myYTPlayer"
+    },
+    {
         "title":"個人網站",
         "text":"主要使用技術:\r\n Vue.js、HTML5、SCSS、Vue Bootstrape、JavaScript",
         "imgUrl":"/images/vuework.png",
