@@ -1,32 +1,30 @@
 [
     {
         "title":"簡易Youtube播放器",
-        "text":"主要使用技術:\r\n Vue.js、HTML5、SCSS、JavaScript、Youtube Api串接、Git版本控制",
+        "discription":"串接Youtube Api製作出簡易版本的 Youtube收藏播放器",
+        "text":"主要使用技術:\r\n Vue.js、Vuex、Vue Router、HTML5、SCSS、JavaScript、Youtube Api串接、Git版本控制",
         "imgUrl":"/images/simpleYT.png",
         "pageUrl":"/myYTPlayer"
     },
     {
         "title":"個人網站",
-        "text":"主要使用技術:\r\n Vue.js、HTML5、SCSS、Vue Bootstrape、JavaScript",
+        "discription":"使用Vue.js 製作個人網站，配合flex製作RWD並搭配GCP上線",
+        "text":"主要使用技術:\r\n Vue.js、Vue Router、Node.js、GCP、HTML5、SCSS、Vue Bootstrap、JavaScript",
         "imgUrl":"/images/vuework.png",
         "pageUrl":"https://github.com/rubibyxd/rubyWebsite"
     },
     {
         "title":"Podcast收聽平台電商網站",
-        "text":"主要使用技術:\r\nReact、Node.js、HTML5、CSS/SCSS、JavaScript、Bootstrape、RESTful API、Git版本控制、MySQL",
+        "discription":"以８人為團隊，分工合作以一個月的時間內製作出來結合收聽、購物商城的網站。\r\n 負責部分:購物車頁面、訂單頁面、結帳頁面、優惠券",
+        "text":"主要使用技術:\r\nReact、Node.js、HTML5、CSS/SCSS、JavaScript、Bootstrap、RESTful API、Git版本控制、MySQL",
         "imgUrl":"/images/podcast.png",
         "pageUrl":"https://github.com/kenjiinthehouse/soundarProj"
     },
     {
         "title":"射擊小遊戲",
+        "discription":"以 jQuery 為主寫出的簡單射擊遊戲",
         "text":"主要使用技術:\r\njQuery、HTML5、CSS、JavaScript",
         "imgUrl":"/images/JQHW.png",
         "pageUrl":"/jetGame"
-    },
-    {
-        "title":"切版練習(暴雪官網)",
-        "text":"主要使用技術:\r\nHTML5、CSS、Bootstrape、JavaScript",
-        "imgUrl":"/images/BSHW.png",
-        "pageUrl":"https://github.com/rubibyxd/MyBootstrapeHW"
     }
 ]

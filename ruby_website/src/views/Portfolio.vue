@@ -15,6 +15,7 @@
         <div class="work-card">
           <div class="work-discription">
             <div class="work-title">{{ myData[index].title }}</div>
+            <div class="work-text">{{ myData[index].discription }}</div>
             <div class="work-text">{{ myData[index].text }}</div>
           </div>
           <div class="work-picture">
@@ -97,15 +98,21 @@ export default {
             bottom: 0;
             opacity: 1;
           }
+          .work-card{
+            img{
+              width: 100%;
+              height: 90%;
+            }
+          }  
         }
         .guide-label-btn{
           width: 100%;
           background-color: #927842;
           text-align: center;
           color: #F4F8FC;
-          font-size: 22px;
+          font-size: 16px;
           font-weight: bold;
-          padding: 12px 0;
+          padding: 10px 0;
           position: absolute;
           bottom: -50px;
           left: 0;
@@ -117,7 +124,6 @@ export default {
           height: 100%;
           border: 3px solid #927842;
           display: flex;
-          
           &:hover{
             img{
               width: 100%;
@@ -127,16 +133,17 @@ export default {
         }
         .work-discription{
           width: 50%;
+          padding: 20px 0;
           .work-title{
             font-size: 24px;
             font-weight: bold;
             border-left: 40px solid #A75154;
             padding-left: 10px;
             margin-left: -15px;
-            margin-top: 40px;
+            margin-bottom: 15px;
           }
           .work-text{
-            padding: 40px;
+            padding: 10px 40px;
             font-size: 16px;
             line-height: 32px;
             color: #484E58;
@@ -171,7 +178,7 @@ export default {
       .work-area{
         .work-card-container{
           width: 80%;
-          height: 280px;
+          min-height: 310px;
           }
           .work-card{
             .work-discription{
