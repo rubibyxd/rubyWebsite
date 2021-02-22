@@ -26,7 +26,7 @@ $(document).on("keydown", function (e) {
         let bulletLeft = parseInt($(".jet").css("left"))+100;
         let d = new Date();
         let id = d.getTime();
-        let bulletSound = new Audio("jetGame/sound/bullet-lazer.mp3");
+        let bulletSound = new Audio("./sound/bullet-lazer.mp3");
         if($('.bullet').length < 10){
             bulletSound.play();
             $(".box").append(
@@ -100,7 +100,7 @@ $(".game-cover :button").on("click",function(){
             let d = new Date()
             let id = d.getTime()
             $(".wrap").append(`<div class="asteroid" id="a_${id}" style="top:${astRandTop}px">
-            <img src="jetGame/imgs/asteroid.svg" alt="">
+            <img src="./imgs/asteroid.svg" alt="">
                                             </div>`)
         },1000);
     },4000);
@@ -147,7 +147,7 @@ let checkjHitJet = function (asteroidID){
     let jetCrack = function(){
         $('#jet-explot').trigger('play');
         // $('#game-over-sound').trigger('play');                
-        $('.jet>img').attr("src","jetGame/imgs/explosions-1.png");
+        $('.jet>img').attr("src","./imgs/explosions-1.png");
         $('#bgm').trigger('pause');
         $('#bgm').get().currentTime = 0;
         isStop = true;
@@ -207,7 +207,7 @@ let checkHitBullet = function(asteroidID) {
             if(hitedAsteroidArr.indexOf(asteroidID) === -1)
                 hitedAsteroidArr.push(asteroidID)
             point = hitedAsteroidArr.length
-            asteroid.children('img').attr("src","jetGame/imgs/explosions-2.png");                    
+            asteroid.children('img').attr("src","./imgs/explosions-2.png");                    
             bullet.remove();
             bulletCount ++;
             arrBulletCount();
