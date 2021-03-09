@@ -12,6 +12,8 @@ var app = express();
 var website = path.join(__dirname, 'ruby_website/dist');
 var jetGame = path.join(__dirname, 'jetGame/');
 var myYTPlayer = path.join(__dirname, 'yt-simple-ver/dist');
+var maritimeWeather = path.join(__dirname, 'maritime-weather-project/dist');
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -25,9 +27,14 @@ app.use(cookieParser());
 // jetGame =======================
 app.use('/jetGame/',express.static(jetGame));
 
+
 // myYTPlayer =======================
 app.use('/myYTPlayer/',express.static(myYTPlayer));
 app.use('/myYTPlayer/*',express.static(myYTPlayer));
+
+// maritimeWeather =======================
+app.use('/maritimeWeather/',express.static(maritimeWeather));
+app.use('/maritimeWeather/*',express.static(maritimeWeather));
 
 app.use('/',express.static(website));
 app.use('/*',express.static(website));
