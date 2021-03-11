@@ -9,7 +9,6 @@
     </div>
     <div class="work-area">
       <div class="work-card-container"
-           @click.stop="hrefEvent(myData[index].pageUrl)" 
            v-for="(item,index) in myData" 
            :key="index">
         <div class="work-card">
@@ -17,12 +16,18 @@
             <div class="work-title">{{ myData[index].title }}</div>
             <div class="work-text">{{ myData[index].discription }}</div>
             <div class="work-text">{{ myData[index].text }}</div>
+            <div class="work-text mb-3" v-if="myData[index].gitUrl !== ''">
+              <a class="gitUrl" :href="myData[index].gitUrl">
+                <font-awesome-icon class="card-icons" :icon="['fab', 'github-square']" />
+                {{ myData[index].gitUrl }}
+              </a>
+            </div>
           </div>
           <div class="work-picture">
             <img :src="myData[index].imgUrl" alt="work-pic">
           </div>
         </div>
-        <div class="guide-label-btn">點擊查看DEMO</div>
+        <div class="guide-label-btn" @click.stop="hrefEvent(myData[index].pageUrl)">點擊查看DEMO</div>
       </div>
     </div>
   </div>
@@ -85,7 +90,6 @@ export default {
       align-items: center;
       .work-card-container{
         width: 80%;
-        height: 380px;
         padding: 12px;
         background-color: #F4F8FC;
         margin-bottom: 70px;
@@ -101,7 +105,7 @@ export default {
           .work-card{
             img{
               width: 100%;
-              height: 90%;
+              height: 95%;
             }
           }  
         }
@@ -127,8 +131,11 @@ export default {
           &:hover{
             img{
               width: 100%;
-              height: 87%;
+              height: 95%;
             }
+          }
+          .gitUrl {
+            text-decoration: none;
           }
         }
         .work-discription{
@@ -180,8 +187,15 @@ export default {
           width: 80%;
           min-height: 310px;
           }
+          &:active {
+            .guide-label-btn {
+              display: block;
+            }
+          }
           .work-card{
+            flex-direction: column-reverse;
             .work-discription{
+              width: 100%;
               .work-title{
                 font-size: 18px;
                 border-left: 30px solid #A75154;
@@ -196,6 +210,14 @@ export default {
                 display: -moz-box;
                 -webkit-line-clamp: 4;
                 -webkit-box-orient: vertical;
+              }
+            }
+            .work-picture{
+              width: 100%;
+              img{
+                width: 100%;
+                object-fit: cover;
+                transition: 0.5s ease-in-out;
               }
             }
           }
