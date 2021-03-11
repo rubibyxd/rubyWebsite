@@ -1,5 +1,12 @@
 [
     {
+        "title":"網頁設計/切版",
+        "discription":"搭配7+1設計模式以及Vutify,設計切版出電腦、平板、手機的RWD版面，使用Vue Cookies存取使用者訪問紀錄",
+        "text":"主要使用技術:\r\n Vue.js、Vutify、Vue Cookies、HTML5、SCSS、JavaScript、Git版本控制",
+        "imgUrl":"/images/scss_rwd.png",
+        "pageUrl":"/maritimeWeather/"
+    },
+    {
         "title":"簡易Youtube播放器",
         "discription":"串接Youtube Api製作出簡易版本的 Youtube收藏播放器",
         "text":"主要使用技術:\r\n Vue.js、Vuex、Vue Router、HTML5、SCSS、JavaScript、Youtube Api串接、Git版本控制",
