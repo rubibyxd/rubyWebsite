@@ -5,10 +5,22 @@
       <b-navbar-brand class="my-name">Ruby Hsieh</b-navbar-brand>
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav class="navbar-list ml-auto">
-          <router-link to="/">HOME</router-link>
-          <router-link to="/portfolio">PORTFOLIO</router-link>
-          <router-link to="/resume">RESUME</router-link>
-          <router-link to="/contact">CONTACT</router-link>
+          <router-link to="/">
+            <div class="cnTab">首頁</div>
+            <div class="enTab">HOME</div>
+          </router-link>
+          <router-link to="/portfolio">
+            <div class="cnTab">作品集</div>
+            <div class="enTab">PORTFOLIO</div>
+          </router-link>
+          <router-link to="/resume">
+            <div class="cnTab">履歷</div>
+            <div class="enTab">RESUME</div>
+          </router-link>
+          <router-link to="/contact">
+            <div class="cnTab">聯絡我</div>
+            <div class="enTab">CONTACT</div>
+          </router-link>
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -53,9 +65,15 @@
     display: flex;
     justify-content: space-between;
     margin-right: 100px;
+    .cnTab {
+      font-weight: bold;
+    }
+    .enTab {
+      font-size: 12px;  
+    }
     a {
       display: inline-block;
-      width: 100px;
+      width: 120px;
       text-align: center;
       font-family: 'Roboto', sans-serif;
       font-size: 16px;
@@ -65,6 +83,7 @@
       &.router-link-exact-active {
         color: #d1a449;
         text-shadow: 0px 0 1px #927842;
+        border-bottom: 3px solid #d1a449;
       }
     }
   }

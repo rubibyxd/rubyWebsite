@@ -45,20 +45,19 @@ export default {
     overflow: hidden;
     position: relative;
     .deco-circle{
-      width: 1230px;
-      height: 1230px;
+      width: 1000px;
+      height: 1000px;
       border-radius: 100%;
       background-color: #484E58;
       position: absolute;
       top: -25%;
-      left: -40%;
+      left: -15%;
       z-index: 0;
     }
     .work-title{
-      padding: 60px 0;
+      padding: 20px 0;
       margin-top: 150px;
       text-align: center;
-      margin-bottom: 60px;
       color: #F4F8FC;
       .topic-cn{
         font-size: 36px;

@@ -12,6 +12,17 @@
           由行銷轉職前端工程師，畢業於資策會前端工程師訓練班。
           畢業後致力於學習Vue框架技術、使用GCP架設網站、研究Google Api、學習SCSS設計模式等等來製作作品集。
         </div>
+        <div class="my-skill mt-3">
+          <div class="skill-info">
+            <div class="skill-title mb-2">前端技能</div>
+            Vue.js、Vuex、 Vue Router、Vue Cookies、Vuetify、HTML 5、CSS、SCSS、JavaScript(ES6)、jQuery、Bootstrap
+          </div>
+          <div class="link-btn-container">
+            <router-link to="/resume" class="link-resume">
+              查看更多技能
+            </router-link>
+          </div>
+        </div>
       </div>
     </div>
     <div class="scroll-hint">
@@ -28,22 +39,21 @@ export default {
 </script>
 <style scoped lang="scss">
   .simple-intro{
-    margin-top: 160px;
+    margin-top: 100px;
     margin-bottom: 55px;
     width: 100%;
     .card-container{
       position: relative;
       margin: 0 auto;
       width: 70%;
-      // min-width: 697px;
       height: 100%;
       display: flex;
       .my-pic{
-        width: 35%;
-        height: 400px;
+        width: 25%;
+        min-height: 300px;
         background-image: url('/images/mypic.jpg');
         background-size: 130%;
-        background-position: 50% 30%;
+        background-position: 50% 20%;
         background-repeat: no-repeat;
         border-radius: 5px;
       }
@@ -51,25 +61,25 @@ export default {
         width: 65%;
         padding: 0 40px;
         .career-title{
-          font-size: 32px;
+          font-size: 28px;
           font-family: 'Roboto', sans-serif;
           color: #F4F8FC;
+          margin-bottom: 20px;
         }
         .my-name{
-          margin: 20px 0;
-          border-bottom: 2px solid #F4F8FC;
+          margin: 10px 0;
+          border-left: 10px solid #10F6A1;
           color: #F4F8FC;
           display: flex;
           align-items: center;
-          padding-bottom: 10px;
           .cn-name{
-            font-size: 24px;
+            font-size: 16px;
             font-weight: normal;
-            padding-right: 20px;
+            padding: 0 10px;
             margin: 0;
           }
           .en-name{
-            font-size: 24px;
+            font-size: 16px;
             font-weight: normal;
             font-family: 'Roboto', sans-serif;
             padding: 0;
@@ -77,11 +87,47 @@ export default {
           }
         }
         .my-intro{
-          font-size: 16px;
+          font-size: 14px;
           font-weight: lighter;
-          line-height: 36px;
+          line-height: 1.5;
           letter-spacing: 1px;
           color: #F4F8FC;
+        }
+        .my-skill {
+          display: flex;
+          flex-direction: column;
+          .skill-title {
+            border-left: 10px solid #10F6A1;
+            padding-left: 10px;
+          }
+          .skill-info {
+            font-size: 14px;
+            line-height: 1.5;
+            margin-top: 10px;
+            margin-bottom: 20px;
+          }
+          .link-btn-container {
+            align-self: flex-end;
+            margin-top: 10px;
+            .link-resume {
+              padding: 5px 50px;
+              border: 1px solid #F4F8FC;
+              color: #F4F8FC;
+              border-radius: 5px;
+              text-align: center;
+              transition: 0.3s;
+              a {
+                text-decoration: none;
+              }
+              &:hover {
+                text-decoration: none;
+                border: 1px solid transparent;
+                color: #222730;
+                background-color: #10F6A1;
+              }
+            }
+          }
+
         }
       }
     }
@@ -94,6 +140,9 @@ export default {
       color: #10F6A1;
       position: absolute;
       z-index: 15;
+      p {
+        margin: 0;
+      }
     }
   }
 @media(max-width:1024px){
@@ -128,6 +177,12 @@ export default {
         .my-intro{
           font-size: 14px;
         }
+        .my-skill {
+          align-items: center;
+          .link-btn-container {
+            align-self: unset;
+          }
+        }
       }
     }
   }
@@ -136,7 +191,6 @@ export default {
   .simple-intro{
     margin-top: 60px;
     .card-container{
-      // flex-wrap: wrap;
       flex-direction: column;
       align-items: center;
       .my-pic{
@@ -152,10 +206,9 @@ export default {
           text-align: center;
         }
         .my-name{
-          justify-content: center;
-          border-bottom: 1px solid #F4F8FC;
           .cn-name,.en-name{
-            font-size: 20px;
+            padding-left: 10px;
+            font-size: 14px;
           }
         }
         .my-intro{
