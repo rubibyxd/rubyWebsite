@@ -96,7 +96,6 @@ export default {
         color: #222730;
         position: relative;
         overflow: hidden;
-        cursor: pointer;
         &:hover{
           .guide-label-btn{
             bottom: 0;
@@ -122,6 +121,7 @@ export default {
           left: 0;
           opacity: 0;
           transition: all 0.3s;
+          cursor: pointer;
         }
         .work-card{
           width: 100%;
