@@ -1,8 +1,8 @@
 [
     {
         "title":"網頁設計/切版",
-        "discription":"搭配7+1設計模式以及Vutify,設計切版出電腦、平板、手機的RWD版面，使用Vue Cookies存取使用者訪問紀錄",
-        "text":"主要使用技術:\r\n Vue.js、Vutify、Vue Cookies、HTML5、SCSS、JavaScript、Git版本控制",
+        "discription":"搭配scss 7-1 pattern以及Vuetify,設計切版出電腦、平板、手機的RWD版面，使用Vue Cookies存取使用者訪問紀錄",
+        "text":"主要使用技術:\r\n Vue.js、Vuetify、Vue Cookies、SCSS、7-1 pattern、JavaScript、Git版本控制",
         "imgUrl":"/images/scss_rwd.png",
         "pageUrl":"/maritimeWeather/",
         "gitUrl":"https://reurl.cc/Kx8ezq"
