@@ -1,7 +1,7 @@
 [
     {
         "title":"網頁設計/切版",
-        "discription":"使用 Vuetify Framework 切版與 SCSS 7-1 pattern 管理CSS。此網頁是能以電腦、平板、手機觀看的響應式版面，並使用 Vue Cookies 存取使用者訪問紀錄。",
+        "discription":"使用 Vuetify Framework 切版與 SASS 7-1 pattern 管理CSS。此網頁是能以電腦、平板、手機觀看的響應式版面，並使用 Vue Cookies 存取使用者訪問紀錄。",
         "text":"主要使用技術:\r\n Vue.js、Vuetify、Vue Cookies、SCSS、7-1 pattern、JavaScript、Git版本控制",
         "imgUrl":"/images/scss_rwd.png",
         "pageUrl":"/maritimeWeather/",
