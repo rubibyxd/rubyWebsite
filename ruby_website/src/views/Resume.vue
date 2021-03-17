@@ -435,6 +435,7 @@ export default {
             .job-info-container{
               font-size: 12px;
               .company-logo{
+                width: 50px;
                 margin-right: 15px;
                 img{
                   width: 50px;
