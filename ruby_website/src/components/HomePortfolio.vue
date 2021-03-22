@@ -120,7 +120,7 @@ export default {
         align-items: center;
         justify-content: space-between;
         .work-intro{
-          width: 50%;
+          width: 40%;
           height: 100%;
           display: flex;
           align-items: center;
@@ -134,13 +134,11 @@ export default {
             flex-direction: column;
             justify-content: space-between;
             .work-title{
-              height: 35%;
               font-size: 28px;
               font-weight: bold;
               padding: 40px 40px 30px;
             }
             .work-text-intro{
-              height: 40%;
               padding: 0 40px 30px;
               color: #484E58;
               font-size: 16px;
@@ -176,7 +174,7 @@ export default {
           }
         }
         .work-pic{
-          width: 50%;
+          width: 60%;
           height: 100%;
           img{
             width: 100%;
@@ -209,7 +207,7 @@ export default {
   @media(max-width:1024px){
     .home-portfolio{
       .work-container{
-        width: 80%;
+        width: 90%;
         .tags{
           padding-left: 30px;
         }
@@ -221,22 +219,25 @@ export default {
             .intro-block{
               overflow: hidden;
               .work-title{
-                font-size: 24px;
+                font-size: 18px;
                 padding: 20px 20px 20px;
               }
               .work-text-intro{
                 padding: 0 20px;
-                font-size: 14px;
+                font-size: 12px;
                 overflow: hidden;
                 display: -webkit-box;
                 display: -moz-box;
                 -webkit-line-clamp: 4;
                 -webkit-box-orient: vertical;
               }
-              .continue-btn{
-                font-size: 16px;
+              .continue-btn {
+                font-size: 14px;
                 margin-right: 20px;
                 margin-bottom: 20px;
+                .continue-btn-icon {
+                  font-size: 14px;
+                }
               }
             }
           }
@@ -246,13 +247,14 @@ export default {
   }
   @media(max-width: 640px){
     .home-portfolio{
+      margin-bottom: 0;
       .work-container{
         .tags{
           display: none;
         }
         .main-card{
           width: 100%;
-          height: 500px;
+          height: unset;
           margin: 0 auto;
           flex-wrap: wrap;
           flex-direction: column-reverse;
@@ -268,6 +270,7 @@ export default {
             align-items: center;
             justify-content: center;
             .intro-block{
+              height: 100%;
               overflow: hidden;
               .work-title{
                 font-size: 18px;
@@ -286,8 +289,7 @@ export default {
               }
               .continue-btn{
                 font-size: 14px;
-                margin-right: 10px;
-                margin-bottom: 10px;
+                margin: 5px 5px 5px 0;
               }
             }
           }
