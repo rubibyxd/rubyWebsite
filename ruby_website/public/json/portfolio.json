@@ -19,7 +19,7 @@
         "title":"個人網站",
         "discription":"以Vue.js寫出的個人網站，以flex達到響應式網頁設計，並搭配GCP上線。",
         "text":"主要使用技術:\r\n Vue.js、Vue Router、Node.js、GCP、HTML5、SCSS、Vue Bootstrap、JavaScript",
-        "imgUrl":"/images/mypage.png",
+        "imgUrl":"/images/homepage.png",
         "pageUrl":"https://github.com/rubibyxd/rubyWebsite",
         "gitUrl":"https://reurl.cc/V3YzvR"
     },
