@@ -9,8 +9,8 @@
           <p class="en-name">Ruby Hsieh</p>
         </div>
         <div class="my-intro">
-          曾任職於美妝電商公司，由內容行銷轉職前端工程師，畢業於資策會前端工程師訓練班。
-          目前使用的框架是Vue.js，也接觸過React(資策會畢專)，畢業後以GCP架設網站並積極精進自我，有串接過 Youtube Api、使用 SASS 7-1 pattern 製作作品集。
+          <p>曾任職於電商公司，由內容行銷轉職前端工程師，接觸到前端技術而感到深深著迷，享受解決問題後帶來的成就感，喜歡團隊合作、樂於分享。</p>
+          <p>目前使用的框架是Vue.js，也接觸過React(資策會畢專)，畢業後以GCP架設網站並積極精進自我，有串接過 Youtube Api、使用 SASS 7-1 pattern 製作作品集，因此也對後端有基本的概念。</p>      
         </div>
         <div class="my-skill mt-3">
           <div class="skill-info">

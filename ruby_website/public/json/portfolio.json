@@ -8,8 +8,8 @@
         "gitUrl":"https://reurl.cc/Kx8ezq"
     },
     {
-        "title":"簡易Youtube播放器",
-        "discription":"串接Youtube Api製作出簡易版本的 Youtube收藏播放器",
+        "title":"Youtube收藏播放器",
+        "discription":"串接Youtube Api，搭配plyr.js製作出簡易版本的 Youtube收藏播放器。",
         "text":"主要使用技術:\r\n Vue.js、Vuex、Vue Router、HTML5、SCSS、JavaScript、Youtube Api串接、Git版本控制",
         "imgUrl":"/images/simpleYT.png",
         "pageUrl":"/myYTPlayer",
@@ -17,7 +17,7 @@
     },
     {
         "title":"個人網站",
-        "discription":"使用Vue.js 製作個人網站，配合flex製作RWD並搭配GCP上線",
+        "discription":"以Vue.js寫出的個人網站，以flex達到響應式網頁設計，並搭配GCP上線。",
         "text":"主要使用技術:\r\n Vue.js、Vue Router、Node.js、GCP、HTML5、SCSS、Vue Bootstrap、JavaScript",
         "imgUrl":"/images/vuework.png",
         "pageUrl":"https://github.com/rubibyxd/rubyWebsite",
@@ -33,7 +33,7 @@
     },
     {
         "title":"射擊小遊戲",
-        "discription":"以 jQuery 為主寫出的簡單射擊遊戲",
+        "discription":"以 jQuery 寫出的簡單射擊遊戲",
         "text":"主要使用技術:\r\njQuery、HTML5、CSS、JavaScript",
         "imgUrl":"/images/JQHW.png",
         "pageUrl":"/jetGame",
