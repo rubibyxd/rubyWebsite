@@ -9,8 +9,8 @@ var debug = require('debug')('myapp:server');
 var fs = require('fs');
 var http = require('http');
 var https = require('https');
-var key = fs.readFileSync(path.join(__dirname + '/../ssl/private.key'));
-var cert = fs.readFileSync(path.join(__dirname + '/../ssl/certificate.crt'));
+var key = fs.readFileSync(path.join('/etc/letsencrypt/live/rubyh.tw/privkey.pem'));
+var cert = fs.readFileSync(path.join('/etc/letsencrypt/live/rubyh.tw/fullchain.pem'));
 var options = {
   key: key,
   cert: cert
